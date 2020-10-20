@@ -5,13 +5,15 @@ const deviceSchema = new mongoose.Schema({
     h: Number,
     t: Number,
     a: Number,
-    lastUpdate: Number
+    lastUpdate: Number,
+    battery: Number,
 }, { versionKey: false });
 
 deviceSchema.methods.getData = function() {
     return {
         id: this.deviceId,
         lastUpdate: this.lastUpdate,
+        battery: this.battery,
         a: this.a,
         h: this.h,
         t: this.t,

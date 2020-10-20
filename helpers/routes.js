@@ -6,3 +6,7 @@ export const errorWrapper = (req, res, callback) => callback().catch(err => {
     });
 });
 
+/**
+ * Returns a random number between min (inclusive) and max (exclusive)
+ */
+export const generateValue = (min, max) => Math.random() * (max - min) + min

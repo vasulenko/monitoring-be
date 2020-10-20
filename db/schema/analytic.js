@@ -15,5 +15,11 @@ analyticSchema.methods.getData = function() {
         data: this.data
     };
 };
+analyticSchema.methods.getAnalytic = function() {
+    return {
+        timestamp: this.timestamp,
+        ...this.data
+    };
+};
 
 export const Analytic = mongoose.model('Analytic', analyticSchema);
