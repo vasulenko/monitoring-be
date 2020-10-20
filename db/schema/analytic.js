@@ -1,14 +1,16 @@
 import mongoose from 'mongoose';
 
 const analyticSchema = new mongoose.Schema({
-    organisation : Number,
+    deviceId : Number,
+    hubId: Number,
     timestamp: Number,
     data: Object
 }, { versionKey: false });
 
 analyticSchema.methods.getData = function() {
     return {
-        organisation: this.organisation,
+        deviceId: this.deviceId,
+        hubId: this.hubId,
         timestamp: this.timestamp,
         data: this.data
     };
